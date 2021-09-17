@@ -1,0 +1,30 @@
+
+
+<div class="row justify-content-between">
+
+  <div class="col-xl-6 col-md-6 mb-4 mt-3" *ngFor="let forex of forexList">
+    <div class="card border-left-primary shadow py-2 ">
+      <div class="card-body">
+        <div class="row justify-content-center ">
+          <div class="col ">
+            <div class="text-xs font-weight-bold price text-uppercase symbol">
+              {{forex.symbol}} - {{forex.name}}
+            </div>
+            Current price:
+            <span class="blockquote">  {{forex.price}}</span>
+            <div class="text-xs font-weight-bold">
+              <p style="font-size: 30px"> Percent change: <span> {{forex.percent_change}}%</span></p>
+            </div>
+          </div>
+          <div class="col text-center" style="display: contents">
+            <span *ngIf="forex.percent_change < 0" style="font-size: 93px;vertical-align: middle;color: red;margin-right: 15%;"> <i class="fa fa-arrow-circle-o-down " ></i></span>
+            <span *ngIf="forex.percent_change > 0" style="font-size: 93px;vertical-align: middle;color: green;margin-right: 15%;"> <i class="fa fa-arrow-circle-o-up" ></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
